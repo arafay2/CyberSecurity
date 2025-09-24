@@ -101,8 +101,8 @@ It was cool to see the raw packets from actions I triggered.
 ![Alt text](https://github.com/arafay2/CyberSecurity/blob/63cabba394e3669cbc155c9ae36660e4b315be3a/Screenshots/Week1_screenshots/icmp%20wireshark.png)
 📸 *[Screenshot of SSH capture]* 
 ![Alt text](https://github.com/arafay2/CyberSecurity/blob/63cabba394e3669cbc155c9ae36660e4b315be3a/Screenshots/Week1_screenshots/ssh%20wireshark.png)
-📸 *[Screenshot of HTTP capture]*  
-![Alt text]()
+📸 *[Screenshot of HTTP capture on ubuntu]*  
+![Alt text](https://github.com/arafay2/CyberSecurity/blob/7cfdb92d8a092f1f025b1e948d7e765296acba7b/Screenshots/Week1_screenshots/http%20traffic%20on%20ubuntu.png)
 
 ---
 
@@ -132,8 +132,29 @@ A few things went wrong along the way:
 
 📸 *[Screenshot of UFW allow rule]*
 
-![Alt text](images/screenshot1.png)
+![Alt text](https://github.com/arafay2/CyberSecurity/blob/206d4aa3613375977d3b0f0c49fe8fe55a204173/Screenshots/Week1_screenshots/ufw%20allow.png)
 
+## 🔎 Advanced Note — Seeing Cross‑VM HTTP from Kali (Promiscuous Mode)
+
+VirtualBox host‑only acts like a switch, so unicast traffic (Windows↔Ubuntu) isn’t visible to Kali by default.
+
+**What I did**
+1. Power off **Kali** → *Settings → Network → Adapter (Host‑Only) → Advanced → Promiscuous Mode: **Allow All***.
+2. Boot Kali and confirm:
+   ```bash
+   ip link show enp0s3
+   ```
+   Look for `PROMISC` in the flags.
+3. In Wireshark on Kali, capture on the host‑only NIC with:
+   ```text
+   tcp.port == 80
+   ```
+4. From Windows, browse to `http://192.168.56.102`.
+
+Now Kali can see the TCP 3‑way handshake, HTTP GET, and 200 OK between Windows and Ubuntu.
+
+📸 *[Wireshark HTTP after enabling promiscuous mode]*
+![Alt text](https://github.com/arafay2/CyberSecurity/blob/7134046339e4468228539a426fc192400df766ee/Screenshots/Week1_screenshots/http%20wireshark%20pronisc%20mode.png)
 
 ---
 
