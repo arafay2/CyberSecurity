@@ -134,6 +134,8 @@ A few things went wrong along the way:
 
 ![Alt text](https://github.com/arafay2/CyberSecurity/blob/206d4aa3613375977d3b0f0c49fe8fe55a204173/Screenshots/Week1_screenshots/ufw%20allow.png)
 
+---
+
 ## 🔎 Advanced Note — Seeing Cross‑VM HTTP from Kali (Promiscuous Mode)
 
 VirtualBox host‑only acts like a switch, so unicast traffic (Windows↔Ubuntu) isn’t visible to Kali by default.
