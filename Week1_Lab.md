@@ -64,6 +64,7 @@ ssh <ubuntu-user>@192.168.56.102
 Got the password prompt which confirmed SSH was working.  
 
 📸 *[Screenshot of SSH session]*
+
 ![Alt text](https://github.com/arafay2/CyberSecurity/blob/63cabba394e3669cbc155c9ae36660e4b315be3a/Screenshots/Week1_screenshots/ssh%20kali%20to%20ubuntu.png)
 
 ### Apache Web Server  
